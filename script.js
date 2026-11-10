@@ -7,8 +7,8 @@
 
 /* ─── Global Configuration ─── */
 const CONFIG = {
-  name: 'Aditi',
-  email: 'demo@gmail.com'
+  name: 'Giang Cuteee',
+  email: 'nhd2k1234@gmail.com'
 };
 
 const FORMSUBMIT_EMAIL = CONFIG.email;
@@ -30,7 +30,7 @@ const NameInjector = (() => {
       el.textContent = `Dear ${CONFIG.name},`;
     });
     document.querySelectorAll('.finale-footer').forEach(el => {
-      el.textContent = `Happy Birthday, ${CONFIG.name}. Here's to every beautiful thing ahead. 🌟`;
+      el.textContent = `Happy Birthday, ${CONFIG.name}. Chúc cho mọi điều tốt đẹp đang chờ đón phía trước em nhé. 🌟`;
     });
   };
   return { init };
@@ -202,9 +202,9 @@ const TimeGreeting = (() => {
   const init = () => {
     const h = new Date().getHours();
     const el = document.getElementById('time-greeting');
-    if (h < 12) el.textContent = '🌸 A Beautiful Morning to Celebrate the Most Beautiful Soul';
-    else if (h < 17) el.textContent = '✨ The Stars Aligned the Day You Were Born';
-    else el.textContent = '🌙 Tonight the World Celebrates You, Love';
+    if (h < 12) el.textContent = '🌸 Một ngày rất đặc biệt và rất đẹp để kỷ niệm bé iu tuyệt vời nhất';
+    else if (h < 17) el.textContent = '✨ Tất cả các vì sao xinh đẹp đã hợp nhất vào ngày em ra đời :33';
+    else el.textContent = '🌙 Tối nay cả thế giới sẽ tôn vinh em, yêu dấu của anh :3';
   };
   return { init };
 })();
@@ -310,7 +310,7 @@ const CakeModule = (() => {
   let blownCount = 0;
   let allBlown = false;
 
-  const WISH = `May this year bring you everything your heart has been quietly hoping for — joy without explanation, love without condition, and adventures that take your breath away. Happy Birthday, ${CONFIG.name}. 🌟`;
+  const WISH = `Chúc em iu một năm mới mang đến tất cả những điều mà bấy lâu nay trái tim em vẫn thầm mong đợi, niềm vui chẳng cần lý do, tình yêu không kèm điều kiện, và những chuyến đi tuyệt vời để khám phá nơi thành phố mới em học tập, làm việc em nhé. Chúc mừng sinh nhật em yêu dấu!, ${CONFIG.name}. 🌟`;
 
   const blowCandle = (index) => {
     if (allBlown) return;
@@ -595,10 +595,12 @@ const LetterModule = (() => {
   const dateEl = document.getElementById('letter-date');
   let opened = false;
 
-  const LETTER_P1 = "On this day, the universe quietly arranged something extraordinary — you. Every smile you carry, every kindness you give without thinking, every dream you chase in your own gentle way — it all adds up to a person the world is genuinely lucky to have.";
-  const LETTER_P2 = "I hope today feels like the warm feeling of sunlight after a long winter. I hope you laugh until your cheeks hurt, feel surrounded by the people who treasure you most, and carry a secret little glow in your chest all day long.";
-  const LETTER_P3 = "You are more wonderful than you realise. More loved than you can measure. And this year ahead? It has been waiting patiently, full of things made just for you. Go meet it with your whole heart. 💛";
-
+  const LETTER_P1 = "Nếu em đang đọc những dòng này, nghĩa là món quà nhỏ mà anh lặng lẽ chuẩn bị suốt thời gian qua đã đến được tay em. Anh muốn gửi đến em những lời chúc tốt đẹp nhất, những điều ấm áp nhất, và cả những nụ cười thật tươi để em luôn cảm thấy hạnh phúc trong ngày đặc biệt này nhé ạ.";
+  const LETTER_P2 = "Người ta thường bảo yêu xa là thử thách, là những nỗi nhớ không thể ôm trọn, là những ngày thèm một cái thơm má mà chỉ có thể nhìn nhau qua màn hình. Nhưng với anh, mỗi km giữa hai ta chỉ làm anh nhận ra em quý giá đến nhường nào.";
+  const LETTER_P3 = "Cảm ơn em vì đã luôn kiên nhẫn, luôn bao dung và dịu dàng cùng anh bước qua những ngày xa cách. Cảm ơn sự tử tế và nụ cười ấm áp của em, là động lực để giúp anh vượt qua những mỏi mệt ngoài kia đóoo. 💛";
+  const LETTER_P4 = "Sinh nhật năm nay, dù anh không thể trực tiếp ở bên để thổi nến cùng em, nhưng toàn bộ trái tim và tình yêu của anh đều đang hướng về em. Anh mong em luôn bình an, luôn rực rỡ và giữ trọn giấc mơ của riêng mình. Anh hứa sẽ luôn cố gắng từng ngày để khoảng cách này sớm rút ngắn lại thành một cái ôm thật chặt. ✨";
+  const LETTER_P5 = "Chúc mừng sinh nhật em yêu — điều tuyệt vời nhất mà vũ trụ đã mang đến cho anh.🌸";
+  
   const typeIn = (el, text, delay = 22, onDone) => {
     el.textContent = '';
     let i = 0;
@@ -654,7 +656,11 @@ const LetterModule = (() => {
         paper.classList.remove('hidden');
         typeIn(document.getElementById('letter-p1'), LETTER_P1, 18, () => {
           typeIn(document.getElementById('letter-p2'), LETTER_P2, 16, () => {
-            typeIn(document.getElementById('letter-p3'), LETTER_P3, 14, spawnHearts);
+            typeIn(document.getElementById('letter-p3'), LETTER_P3, 14, () => {
+              typeIn(document.getElementById('letter-p4'), LETTER_P4, 12, () => {
+                typeIn(document.getElementById('letter-p5'), LETTER_P5, 10, spawnHearts);
+              });
+            });
           });
         });
       }, 500);
@@ -672,18 +678,18 @@ const LetterModule = (() => {
 ───────────────────────────────────────── */
 const WishesGenerator = (() => {
   const WISHES = [
-    "May every morning bring you something small and beautiful to look forward to. ✨",
-    "May your year be filled with laughter that echoes long after the moment has passed. 💛",
-    "May doors open for you that you never even thought to knock on. 🌟",
-    "May you always find your way back to yourself, no matter how far life takes you. 🌙",
-    "May the love you give so freely find its way back to you, multiplied. 🌸",
-    "May your dreams stop whispering and start shouting your name. 💫",
-    "May this be the year everything you've been quietly hoping for finally arrives. 🌺",
-    "May you be surrounded by people who see exactly how rare and precious you are. ✦",
-    "May every sunset remind you that beautiful endings always come before glorious beginnings. 🌅",
-    "May adventure find you when you least expect it, and bring you joy beyond measure. 🎊",
-    "May your cup of happiness never run dry, and your heart always find reasons to sing. 🌷",
-    "May you know, on every ordinary day, just how extraordinary you truly are. ⭐",
+    "Mong rằng mỗi buổi sáng thức dậy, em đều có một điều nhỏ bé nhưng thật đẹp đẽ để ngóng chờ. ✨",
+    "Mong tuổi mới của em sẽ ngập tràn những tiếng cười, rộn ràng và vang vọng mãi ngay cả khi khoảnh khắc ấy đã qua đi. 💛",
+    "Mong rằng những cánh cửa em chưa từng nghĩ sẽ gõ tới cũng sẽ rộng mở đón chào em. 🌟",
+    "Mong em luôn tìm thấy đường về với chính mình, dù cho cuộc đời có đưa em đi xa đến đâu. 🌙",
+    "Mong tình yêu mà em đã trao đi đầy tự do và thuần khiết sẽ quay trở lại với em, trọn vẹn và gấp nhiều lần hơn thế. 🌸",
+    "Mong những ước mơ của em không còn thì thầm nữa, mà sẽ cất tiếng gọi tên em thật rực rỡ.💫",
+    "Mong rằng đây sẽ là năm mà tất cả những điều em lặng lẽ hy vọng bấy lâu nay cuối cùng cũng mỉm cười tìm đến. 🌺",
+    "Mong em luôn được bao bọc bởi những người nhìn thấy rõ em hiếm có và quý giá đến nhường nào. ✦",
+    "Mong mỗi hoàng hôn đều nhắc em nhớ rằng: những kết thúc đẹp đẽ luôn là khởi đầu cho một bình minh rực rỡ. 🌅",
+    "Mong những điều bất ngờ tuyệt vời sẽ tìm đến khi em ít mong chờ nhất, mang theo niềm vui vượt ngoài mọi kỳ vọng. 🎊",
+    "Mong chén đắng cuộc đời sẽ tránh xa em, để ly hạnh phúc của em chẳng bao giờ cạn, và trái tim em luôn tìm thấy lý do để cất tiếng hát.🌷",
+    "Mong em hiểu được rằng, ngay cả trong những ngày bình thường nhất, em vẫn luôn là một điều cực kỳ phi thường.⭐",
   ];
 
   let last = -1;
